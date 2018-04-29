@@ -1,0 +1,22 @@
+<div class="container">
+    <hr>
+    <h2 class="text-center">Login form</h2>
+    <div class="container">
+        {{#if register_status}}
+        <div class="alert alert-success" role="alert">
+            You have successfully registered. You may now login.
+        </div>
+        {{/if}}
+        <form action="/user/login" method="POST">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <hr>
+    </div>
