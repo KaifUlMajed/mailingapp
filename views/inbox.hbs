@@ -1,0 +1,42 @@
+{{>sidenav}}
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+</style>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Inbox</h1>
+        <hr class="my-4">
+        {{#if emails}}
+        <table>
+            <tr>
+                <th>From</th>
+                <th>Subject</th>
+                <th>Date</th>
+            </tr>
+            {{#each emails}}
+                <tr>
+                    <td>{{sender}}</td>
+                    <td>{{subject}}</td>
+                    <td>{{date}}</td>
+                </tr>
+            {{/each}}
+        </table>
+        {{else}}
+            <p class="lead">There are no emails to show.</p>
+        {{/if}}
+    </div>
+</div>
